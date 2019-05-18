@@ -2,7 +2,8 @@
 
 ```
 docker run --rm \
-  -e HOST=mongodb://localhost:27017
+  -e HOST=localhost
+  -e PORT=27017
   -e DATABASE=mydatabase
   -e USERNAME=user
   -e PASSWORD=pass

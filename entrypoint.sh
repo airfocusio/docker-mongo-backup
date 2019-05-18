@@ -6,6 +6,7 @@ FOLDER="$(/bin/date +%Y)/$(/bin/date +%Y-%m)/$(/bin/date +%Y-%m-%d)"
 FILE="$(/bin/date +%Y-%m-%d-%H%M%S)-${DATABASE}.mongodb.gz"
 mongodump \
   --host "${HOST}" \
+  --port "${PORT:-27017}" \
   --db "${DATABASE}" \
   --username "${USERNAME}" \
   --password "${PASSWORD}" \
