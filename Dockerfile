@@ -1,4 +1,4 @@
-FROM mongo:3.6.12
+FROM mongo:4.0.9
 
 RUN apt-get update \
  && apt-get install --yes curl \
