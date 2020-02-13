@@ -12,6 +12,8 @@ docker run --rm \
   -e S3_ACCESS_KEY_ID=id \
   -e S3_ACCESS_KEY_SECRET=secret \
   -e S3_DIRECTORY=myspace/mongo-backup \
+  -e S3_CLEAN_OLDER_THAN=30d \
+  -e S3_GPG_ENCRYPTION_PASSPHRASE=secret \
   airfocusio/mongo-backup:4.0.9 \
   backup
 ```

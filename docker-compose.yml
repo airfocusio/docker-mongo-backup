@@ -1,0 +1,22 @@
+version: "2"
+
+
+services:
+  mongodb:
+    image: "mongo:4.0.9"
+
+  backup:
+    build: .
+    command: [backup]
+    environment:
+      - HOST=mongodb
+      - DATABASE=test
+      - S3_HOST=...
+      - S3_ACCESS_KEY_ID=...
+      - S3_ACCESS_KEY_SECRET=...
+      - S3_DIRECTORY=...
+      - S3_CLEAN_OLDER_THAN=5m
+      - S3_GPG_ENCRYPTION_PASSPHRASE=test
+    depends_on:
+      - mongodb
+
